@@ -3,8 +3,11 @@
   <body>
     <h1>Upload a CSV file</h1>
     <form action="http://127.0.0.1:5000/csv_upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="file" accept=".csv">
-      <input type="submit" value="Submit">
+      
+      <input type="file" id="csv-file" accept=".csv" />
+      <button type="submit">Upload</button>
     </form>
+    <select id="csv-dropdown"></select>
+    <script src="app.js"></script>
   </body>
 </html>
