@@ -12,46 +12,47 @@ from sklearn.preprocessing import LabelEncoder
 def prepdata(file, labelCol, nanThreshold):
 
 	#initialize variables
-	nanThreshold = 0.6
+	#nanThreshold = 0.6
 	enc = OrdinalEncoder()
 	le = LabelEncoder()
 	imputer = SimpleImputer(strategy="mean")
-	labelCol = ''
 
+	df=file.copy()
+	df2=file.copy()
 
-	#Read file
-	df = pd.read_csv('breast-cancer.csv')
-	
-	labelCol = 'diagnosis'
-	
+	labelCol_cat=labelCol+'_cat'
+
 	#Label categorical data
 	#get label from user 
 
-	df[labelCol] = enc.fit_transform(df[[labelCol]])
+	#df[labelCol] = enc.fit_transform(df[[labelCol]])
+	df2[labelCol] = le.fit_transform(df2[labelCol])
 
 	#ordinal encoder
 
-	print(enc.categories_)
-	print(df.shape)
+	#print(enc.categories_)
+	#print(df2.shape)
 	
 	#Replace ? with NaN
-	df = df.replace("?", np.nan)
-	print(df)
-	print(df.shape)
+	df2 = df2.replace("?", np.nan)
+	print(df2)
+	print(df2.shape)
 	#Check the % of NaN in each column
-	x=df.isna().sum()/len(df)*100
+	x=df2.isna().sum()/len(df2)*100
 	#print(x[2])
 	#print(type(x))
 	
 	#Drop the columns with more than x % NaN values
-	df.dropna(thresh=nanThreshold*len(df),axis=1,inplace=True)
+	df2.dropna(thresh=nanThreshold*len(df2),axis=1,inplace=True)
 
 	#print(df2)
 
 	#Imputation
-	
-	imputer.fit(df)
-	imputedDF = imputer.transform(df)
+	#Encountered error before adding categorical encoding
+
+	imputer.fit(df2)
+	imputedDF = imputer.transform(df2)
+
 	#print(imputedDF)
 	#print(pd.DataFrame(imputedDF))
 
@@ -63,4 +64,13 @@ def prepdata(file, labelCol, nanThreshold):
 
 #Main
 
-prepdata()
+
+labelCol = ''
+
+	
+labelCol = 'diagnosis'
+nanThreshold = 0.6
+#Read file
+df = pd.read_csv('breast-cancer.csv')
+
+prepdata(df,labelCol,nanThreshold)
