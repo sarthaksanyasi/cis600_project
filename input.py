@@ -3,6 +3,7 @@ import pandas as pd
 import json as js
 import csv as csvtest
 from io import StringIO
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
@@ -10,11 +11,12 @@ app = Flask(__name__)
 def csv_upload():
     # Get the uploaded file from the request
     
-    csv_file = pd.read_csv(request.files['file'], index_col=0, nrows=0).columns.tolist()
+    ###### intial logic for printing headers start ######
+    #csv_file = pd.read_csv(request.files['file'], index_col=0, nrows=0).columns.tolist()
     
-    print('headers were: ', csv_file)
-    y = '\n'.join(csv_file)
-
+    #print('headers were: ', csv_file)
+    #y = '\n'.join(csv_file)
+    ###### intial logic for printing headers end ########
 
     # Load the CSV file into a pandas DataFrame
     #df = pd.read_csv(csv_file)
@@ -40,7 +42,22 @@ def csv_upload():
 
     #test comment
     #return {'sum_first_col': sum_first_col}
-    return y
+    #return y
+    
+    # Code Changes for safe file :: Start : Sarthak ###########################
+
+    file = request.files['file']
+    filename = secure_filename(file.filename)
+    # Check if the filename is safe
+    if filename != file.filename:
+        return 'Unsafe filename', 400
+    # Process the file
+    # ...
+    return 'File uploaded successfully'
+
+    # Code Changes for safe file :: End : Sarthak #############################
+
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

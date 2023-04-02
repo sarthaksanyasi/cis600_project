@@ -141,3 +141,22 @@ body
     
    
 }
+
+.upload_f {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    width: 640px;
+    padding: 300px;
+}
+
+.labelled_data {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    width: 640px;
+    padding: 300px;
+}
+
