@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset = "utf-8">
+<head>
+    <meta charset="utf-8">
     <title>
         Welcome to Cancer Dignosis
     </title>
-    <link rel = "stylesheet" href="style.css">
-    <link rel = "preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Monsterrat&display=swap" rel ="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monsterrat&display=swap" rel="stylesheet">
 
-    
-    <script>
+
+    <!--<script>
         function submitform() {
             const radios = document.getElementsByName('label-group');
             let isChecked = false;
@@ -23,7 +23,7 @@
                     window.location.href = "index.html";
                 }
 
-        
+
             }
             if (isChecked) {
                 document.getElementById('id1').style.display = 'none';
@@ -33,6 +33,7 @@
             }
         }
     </script>
+        -->
 
 </head>
 
@@ -55,7 +56,7 @@
         <div class="welcome-text">
 
 
-            <div id="id1" style="display:block">
+            <div id="id1">
                 <fieldset>
                     <legend>Please select whether your data is labelled or not:</legend>
                     <br />
@@ -63,13 +64,13 @@
                     <input type="radio" name="label-group" value="label1">Yes
                     <input type="radio" name="label-group" value="label2">No<br>
                     <br>
-                    <input type="submit" value="Proceed" onclick="submitform()">
+                    <!--<input type="submit" value="Proceed"> -->
                     <br />
                 </fieldset>
                 <br />
             </div>
 
-            <div id="id2" style="display:none">
+            <div id="id2">
                 <h3>Upload a CSV file</h3>
                 <br />
                 <form action="http://127.0.0.1:5000/csv_upload" method="post" enctype="multipart/form-data">
@@ -82,6 +83,9 @@
                 <select id="csv-dropdown"></select>
                 <br />
                 <script src="app.js"></script>
+                <br />
+
+                <input type="submit" value="Proceed" />
             </div>
         </div>
   </body>
