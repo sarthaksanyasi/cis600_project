@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\input.py",
+  "SelectedNode": "\\style.css",
   "PreviewInSolutionExplorer": false
 }
