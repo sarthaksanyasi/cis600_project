@@ -10,32 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Monsterrat&display=swap" rel="stylesheet">
 
 
-    <!--<script>
-        function submitform() {
-            const radios = document.getElementsByName('label-group');
-            let isChecked = false;
-            for (let i = 0; i < radios.length; i++) {
-                if (radios[0].checked) {
-                    isChecked = true;
-                    break;
-                }
-                else if (radios[1].checked) {
-                    window.location.href = "index.html";
-                }
-
-
-            }
-            if (isChecked) {
-                document.getElementById('id1').style.display = 'none';
-                document.getElementById('id2').style.display = 'block';
-            } else {
-                alert('Please check whether your data is labelled or not:');
-            }
-        }
-    </script>
-        -->
-
-</head>
+  </head>
 
 
   <body>
@@ -44,49 +19,49 @@
               <!--<img src = "cancer1.jpg" alt = "Logo">-->
           </div>
 
-          <ul class="nav-area">
-              <li><a href="index_1.html">Home</a> </li>
-              <li><a href="https://umassd-my.sharepoint.com/:w:/g/personal/yliu11_umassd_edu/EUcgMumLPWNKr6NgmmAojAMB7LtU49WAWcLxYDWOdzqfkw?email=ssanyasi%40umassd.edu&e=4%3AvHvkLs&at=9&CID=2BE0A683-FD13-49DF-9BD5-25F061D3212C">Documentation</a> </li>
-              <li><a href="https://www.cancer.gov/about-cancer/diagnosis-staging/research">Help</a> </li>
-              <li><a href="contactus.html">Contact Us</a> </li>
-          </ul>
+<ul class="nav-area">
+    <li><a href="index_1.html">Home</a> </li>
+    <li><a href="https://umassd-my.sharepoint.com/:w:/g/personal/yliu11_umassd_edu/EUcgMumLPWNKr6NgmmAojAMB7LtU49WAWcLxYDWOdzqfkw?email=ssanyasi%40umassd.edu&e=4%3AvHvkLs&at=9&CID=2BE0A683-FD13-49DF-9BD5-25F061D3212C">Documentation</a> </li>
+    <li><a href="https://www.cancer.gov/about-cancer/diagnosis-staging/research">Help</a> </li>
+    <li><a href="contactus.html">Contact Us</a> </li>
+</ul>
       </div>
 
 
-        <div class="welcome-text">
+<div class="welcome-text">
 
 
-            <div id="id1">
-                <fieldset>
-                    <legend>Please select whether your data is labelled or not:</legend>
-                    <br />
+    <div id="id1">
+        <fieldset>
+            <legend>Please select whether your data is labelled or not:</legend>
+            <br />
 
-                    <input type="radio" name="label-group" value="label1">Yes
-                    <input type="radio" name="label-group" value="label2">No<br>
-                    <br>
-                    <!--<input type="submit" value="Proceed"> -->
-                    <br />
-                </fieldset>
-                <br />
-            </div>
+            <input type="radio" name="label-group" value="label1">Yes
+            <input type="radio" name="label-group" value="label2">No<br>
+            <br>
+            <!--<input type="submit" value="Proceed"> -->
+            <br />
+        </fieldset>
+        <br />
+    </div>
 
-            <div id="id2">
-                <h3>Upload a CSV file</h3>
-                <br />
-                <form action="http://127.0.0.1:5000/csv_upload" method="post" enctype="multipart/form-data">
+    <div id="id2">
+        <h3>Upload a CSV file</h3>
+        <br />
+        <form action="http://127.0.0.1:5000/csv_upload" method="post" enctype="multipart/form-data">
 
-                    <input type="file" id="csv-file" accept=".csv" />
-                    <br />
-                    <!---<button type="submit">Upload</button>-->
-                </form>
-                <br />
-                <select id="csv-dropdown"></select>
-                <br />
-                <script src="app.js"></script>
-                <br />
+            <input type="file" id="csv-file" accept=".csv" />
+            <br />
+            <!---<button type="submit">Upload</button>-->
+        </form>
+        <br />
+        <select id="csv-dropdown"></select>
+        <br />
+        <script src="app.js"></script>
+        <br />
 
-                <input type="submit" value="Proceed" />
-            </div>
-        </div>
+        <input type="submit" value="Proceed" />
+    </div>
+</div>
   </body>
 </html>
