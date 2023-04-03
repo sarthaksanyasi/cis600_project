@@ -34,3 +34,9 @@ csvFileInput.addEventListener("change", (event) => {
 
     reader.readAsText(file);
 });
+
+function updateSelectedColumn() {
+    var dropdown = document.getElementById("csv-dropdown");
+    var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+    document.getElementById("selected-column").value = selectedValue;
+}
