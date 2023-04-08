@@ -21,34 +21,42 @@
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </div>
-    <div class="welcome-text">
-        <fieldset>
-            <legend>Please select whether your data is labelled or not:</legend>
-            <br />
-            <input type="radio" name="label-group" value="label1" onclick="showDropdown()">Yes
-            <input type="radio" name="label-group" value="label2" id="no-radio" onclick="hideDropdown()">No
-            <br>
-            <br>
-        </fieldset>
-        <br />
+    
         
-            <h3>Upload a CSV file</h3>
+            
             <form action="http://127.0.0.1:5000/csv_upload" method="post" enctype="multipart/form-data">
-                <br />
-                <input type="file" id="csv-file" accept=".csv" />
-                <br />
-                <br />
-                <select id="csv-dropdown" style="display: none;" onchange="updateSelectedColumn()">
+                
+                <div class="welcome-text">
+                    <h3> Please proceed further </h3>
                     <br />
+                    <fieldset>
+                        <legend>Please select whether your data is labelled or not:</legend>
+                        <br />
+                        <input type="radio" name="label-group" value="label1" onclick="showDropdown()">Yes
+                        <input type="radio" name="label-group" value="label2" id="no-radio" onclick="hideDropdown()">No
+                        <br>
+                        <br>
+                    </fieldset>
                     <br />
 
-                    <div class="submit">
-                        <input type="submit" value="Proceed" />
-                    </div>
 
-                    <input type="hidden" id="selected-column" name="selected_column" value="">
+
+
                     <br />
-            </form>
+                    <input type="file" id="csv-file" accept=".csv" />
+                    <br />
+                    <br />
+                    <select id="csv-dropdown" style="display: none;" onchange="updateSelectedColumn()">
+                        <br />
+                        <br />
+
+                        <div class="submit">
+                            <input type="submit" value="Proceed" />
+                        </div>
+
+                        <input type="hidden" id="selected-column" name="selected_column" value="">
+                        <br />
+</form>
     </div>
     <script src="app.js"></script>
     <script>
