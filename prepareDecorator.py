@@ -10,6 +10,11 @@ from sklearn.preprocessing import OrdinalEncoder
 from sklearn.preprocessing import LabelEncoder
 
 
+from typing import List
+import requests
+import os
+
+
 from abc import ABC, ABCMeta, abstractmethod
 
 class PreparingData(metaclass=ABCMeta):
@@ -108,17 +113,17 @@ class ImputeData(prepDecorator):
 
 
 #Main
+if __name__=='__main__':
 
-
-labelCol = ''
-
+	PORT = os.environ.get('PORT',5011)
+	labelCol = ''
 	
-labelCol = 'diagnosis'
-nanThreshold = 0.6
-#Read file
-df = pd.read_csv('breast-cancer.csv')
+	labelCol = 'diagnosis'
+	nanThreshold = 0.6
+	#Read file
+	df = pd.read_csv('breast-cancer.csv')
 
-prepdata(df,labelCol,nanThreshold)
+	prepdata(df,labelCol,nanThreshold)
 
 
 

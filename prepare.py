@@ -57,6 +57,7 @@ def prepdata(file, labelCol, nanThreshold):
 	#print(pd.DataFrame(imputedDF))
 
 	idf = pd.DataFrame(imputedDF)
+	idf.to_csv('../prepared_data.csv', encoding='utf-8', index=False)
 
 	print(idf)
 
