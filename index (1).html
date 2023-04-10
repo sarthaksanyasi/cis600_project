@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        Welcome to Cancer Dignosis
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monsterrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <!--<img src = "cancer1.jpg" alt = "Logo">-->
+        </div>
+        <ul class="nav-area">
+            <li><a href="index_1.html">Home</a></li>
+            <li><a href="https://umassd-my.sharepoint.com/:w:/g/personal/yliu11_umassd_edu/EUcgMumLPWNKr6NgmmAojAMB7LtU49WAWcLxYDWOdzqfkw?email=ssanyasi%40umassd.edu&e=4%3AvHvkLs&at=9&CID=2BE0A683-FD13-49DF-9BD5-25F061D3212C">Documentation</a></li>
+            <li><a href="https://www.cancer.gov/about-cancer/diagnosis-staging/research">Help</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+    
+        
+            
+            <form action="http://127.0.0.1:5000/csv_upload" method="post" enctype="multipart/form-data">
+                
+                <div class="welcome-text">
+                    <h3> Please proceed further </h3>
+                    <br />
+                    <fieldset>
+                        <legend>Please select whether your data is labelled or not:</legend>
+                        <br />
+                        <input type="radio" name="label-group" value="label1" onclick="showDropdown()">Yes
+                        <input type="radio" name="label-group" value="label2" id="no-radio" onclick="hideDropdown()">No
+                        <br>
+                        <br>
+                    </fieldset>
+                    <br />
+
+                    <br />
+                    <input type="file" id="csv-file" name="file" accept=".csv" />
+                    <br />
+                    <br />
+                    <select id="csv-dropdown" name="csv_dropdown" style="display: none;" onchange="updateSelectedColumn()"> 
+                    </select>
+
+                        <br />
+                        <br />
+
+                        <div class="submit">
+                            <input type="submit" value="Proceed"  />
+                        </div>
+            </form>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        function showDropdown() {
+            csvDropdown.style.display = "block";
+        }
+
+        function hideDropdown() {
+            csvDropdown.style.display = "none";
+        }
+    </script>
+
+    
+</body>
+</html>
